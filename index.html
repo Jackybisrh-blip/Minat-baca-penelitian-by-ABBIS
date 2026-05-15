@@ -1120,7 +1120,7 @@ async function renderResponses(){
   noResp.style.display='none';
 
   // Ambil dari Sheets jika URL sudah diset
-  if(SHEETS_URL && SHEETS_URL !== "PASTE_URL_APPS_SCRIPT_DI_SINI"){
+  if(SHEETS_URL && SHEETS_URL !== " https://jackybisrh-blip.github.io/PenelitianminatbacacetakdandigitalbyABBIS/"){
     try{
       const pw = document.getElementById('admin-pw-cached')?.value || ADMIN_PW;
       const res = await fetch(`${SHEETS_URL}?action=getResponses&pw=${encodeURIComponent(ADMIN_PW)}`);
@@ -1174,7 +1174,7 @@ async function deleteResp(i){
   if(pw !== ADMIN_PW){ alert('❌ Password salah.'); return; }
 
   // Hapus dari Sheets
-  if(SHEETS_URL && SHEETS_URL !== "PASTE_URL_APPS_SCRIPT_DI_SINI" && r._id){
+  if(SHEETS_URL && SHEETS_URL !== " https://jackybisrh-blip.github.io/PenelitianminatbacacetakdandigitalbyABBIS/" && r._id){
     try{
       await fetch(SHEETS_URL,{
         method:'POST',
