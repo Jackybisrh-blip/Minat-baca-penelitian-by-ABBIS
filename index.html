@@ -884,7 +884,7 @@ async function submitAll(){
   RESPONSES.push({...payload, ts: new Date().toISOString()});
 
   // Kirim ke Google Sheets
-  if(SHEETS_URL && SHEETS_URL !== "https://script.google.com/macros/s/AKfycbzSVb-n22KvNBnfg9-NSgdKzbeHkMfRUJwNtVZKF-Nz6Td95nWPtsLuGj9hz7nutZk/exec"){
+  if(SHEETS_URL && SHEETS_URL !== "https://script.google.com/macros/s/AKfycbx87nH0SRfNT3dO9FLHOMM-Tuo-d2PiiqlGXF7E7h1iILdoLjjcy2zujeB5wShRZvPW/exec"){
     try{
       await fetch(SHEETS_URL, {
         method:'POST', body:JSON.stringify(payload),
@@ -1120,7 +1120,7 @@ async function renderResponses(){
   noResp.style.display='none';
 
   // Ambil dari Sheets jika URL sudah diset
-  if(SHEETS_URL && SHEETS_URL !== " https://jackybisrh-blip.github.io/PenelitianminatbacacetakdandigitalbyABBIS/"){
+  if(SHEETS_URL && SHEETS_URL !== "https://script.google.com/macros/s/AKfycbx87nH0SRfNT3dO9FLHOMM-Tuo-d2PiiqlGXF7E7h1iILdoLjjcy2zujeB5wShRZvPW/exec"){
     try{
       const pw = document.getElementById('admin-pw-cached')?.value || ADMIN_PW;
       const res = await fetch(`${SHEETS_URL}?action=getResponses&pw=${encodeURIComponent(ADMIN_PW)}`);
@@ -1174,7 +1174,7 @@ async function deleteResp(i){
   if(pw !== ADMIN_PW){ alert('❌ Password salah.'); return; }
 
   // Hapus dari Sheets
-  if(SHEETS_URL && SHEETS_URL !== " https://jackybisrh-blip.github.io/PenelitianminatbacacetakdandigitalbyABBIS/" && r._id){
+  if(SHEETS_URL && SHEETS_URL !== "https://script.google.com/macros/s/AKfycbx87nH0SRfNT3dO9FLHOMM-Tuo-d2PiiqlGXF7E7h1iILdoLjjcy2zujeB5wShRZvPW/exec" && r._id){
     try{
       await fetch(SHEETS_URL,{
         method:'POST',
